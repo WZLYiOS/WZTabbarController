@@ -1,0 +1,6 @@
+framework module WZTabbarController {
+  umbrella header "WZTabbarController-umbrella.h"
+
+  export *
+  module * { export * }
+}
