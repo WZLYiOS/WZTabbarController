@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28792E05262D30350074AB3F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28792E04262D30350074AB3F /* TestViewController.swift */; };
 		4C7A2950B5C34BA09D218D0A /* Pods_WZTabbarController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA53B9657BC5D056163F602 /* Pods_WZTabbarController_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		00C8C45CAF7E6AE03EB01026 /* Pods-WZTabbarController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Example.release.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1CB53A5B02B5E6A3C76EEEC7 /* Pods-WZTabbarController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Tests/Pods-WZTabbarController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		28792E04262D30350074AB3F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		38A17EB79FBC678FDB85158D /* Pods-WZTabbarController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Tests.release.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Tests/Pods-WZTabbarController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		565E0EC3448D4A080A15ACCE /* Pods-WZTabbarController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Example.debug.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WZTabbarController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZTabbarController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 				80AC74FC2313796600E8136E /* WZTabBarController.swift */,
 				809D0B942399F43E0082813C /* WZDemoViewController.swift */,
 				80C0ADDD245BEBAB00E2455A /* HomeFooterRefresh.swift */,
+				28792E04262D30350074AB3F /* TestViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 			files = (
 				80AC75102313796600E8136E /* UserViewController.swift in Sources */,
 				80AC75082313796600E8136E /* WZTabBarController.swift in Sources */,
+				28792E05262D30350074AB3F /* TestViewController.swift in Sources */,
 				809D0B952399F43E0082813C /* WZDemoViewController.swift in Sources */,
 				80AC75112313796600E8136E /* MessageViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,

@@ -21,23 +21,32 @@ final class UserViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.separatorStyle = .singleLineEtched
         $0.dataSource = self
+        $0.delegate = self
         
-        
-        $0.refresh.footer = AppearanceRefreshFooter(stateView: UserProgressView(), height: 90, refreshClosure: { [weak self] in
-            guard let self = self else { return }
-            self.tableView.beginUpdates()
-            
-            var indexPaths: [IndexPath] = []
-            for (index, _) in self.array.enumerated() {
-                indexPaths.append(IndexPath(row: index, section: 0))
-            }
-            self.tableView.deleteRows(at: indexPaths, with: UITableView.RowAnimation.top)
-            self.array.removeAll()
-            self.tableView.endUpdates()
-            self.tableView.refresh.footer.endRefreshing()
-        })
+//        $0.refresh.footer = AppearanceRefreshFooter(stateView: UserProgressView(), height: 90, refreshClosure: { [weak self] in
+//            guard let self = self else { return }
+//            self.tableView.beginUpdates()
+//
+//            var indexPaths: [IndexPath] = []
+//            for (index, _) in self.array.enumerated() {
+//                indexPaths.append(IndexPath(row: index, section: 0))
+//            }
+//            self.tableView.deleteRows(at: indexPaths, with: UITableView.RowAnimation.top)
+//            self.array.removeAll()
+//            self.tableView.endUpdates()
+//            self.tableView.refresh.footer.endRefreshing()
+//        })
         return $0
     }(UITableView())
+    
+    public override var hidesBottomBarWhenPushed: Bool {
+        get {
+            return self.navigationController?.topViewController != self
+        }
+        set {
+            super.hidesBottomBarWhenPushed = true
+        }
+    }
     
     private lazy var array = (0...20).map { "\($0)" }
     
@@ -52,6 +61,7 @@ final class UserViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        tableView.backgroundColor = UIColor.red
     }
     
     /// 加载更多数据
@@ -65,7 +75,7 @@ final class UserViewController: UIViewController {
 }
 
 /// MARK - UITableViewDataSource
-extension UserViewController: UITableViewDataSource {
+extension UserViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -75,6 +85,10 @@ extension UserViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.textLabel?.text = array[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(TestViewController(), animated: true)
     }
 }
 

@@ -195,7 +195,9 @@ internal extension WZTabBar /* Layout */ {
         
         if layoutBaseSystem {
             // System itemPositioning
-            for (idx, container) in containers.enumerated(){
+            // RTL反转
+            let arr = UIView.appearance().semanticContentAttribute == .forceLeftToRight ? containers:containers.reversed()
+            for (idx, container) in arr.enumerated(){
                 if !tabBarButtons[idx].frame.isEmpty {
                     container.frame = tabBarButtons[idx].frame
                 }
@@ -216,7 +218,7 @@ internal extension WZTabBar /* Layout */ {
             let height = bounds.size.height - y - itemEdgeInsets.bottom
             let eachWidth = itemWidth == 0.0 ? width / CGFloat(containers.count) : itemWidth
             let eachSpacing = itemSpacing == 0.0 ? 0.0 : itemSpacing
-            
+            /// 备注RTL 自定义未修复
             for container in containers {
                 container.frame = CGRect.init(x: x, y: y, width: eachWidth, height: height)
                 x += eachWidth

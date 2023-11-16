@@ -36,8 +36,9 @@ final class WZLYTabBarController: WZTabBarController {
         let n5 = UINavigationController(rootViewController: v5)
         
         
-        n1.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Home"), title: "首页", image: #imageLiteral(resourceName: "tabbar_home"), selectedImage: #imageLiteral(resourceName: "tabbar_home_light_ios"))
-        n2.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Message"), title: "消息", image: #imageLiteral(resourceName: "mes"), selectedImage: #imageLiteral(resourceName: "mes_light"))
+        n1.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Home"), title: "首页", image: #imageLiteral(resourceName: "tabbar_home"))
+        n2.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Message"),
+                                     title: "消息", image: #imageLiteral(resourceName: "mes"))
         n3.tabBarItem = WZTabBarItem(WZLoopLottieAnimateContentView(resource: "Live", normalName: "Normal", selectedName: "selected"), title: "视频交友", image: UIImage(), selectedImage: UIImage())
         n4.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Community"), title: "社区", image: #imageLiteral(resourceName: "tabbar_dynamic"), selectedImage: #imageLiteral(resourceName: "tabbar_dynamic_light"))
         n5.tabBarItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "User"), title: "我的", image: #imageLiteral(resourceName: "person"), selectedImage: #imageLiteral(resourceName: "person_light"))
@@ -126,6 +127,7 @@ final class WZOrdinaryAnimateContentView: WZBaseTabBarItemContentView {
         view.contentMode = .scaleAspectFit
         view.isUserInteractionEnabled = false
         view.isHidden = true
+        view.backgroundBehavior = .pauseAndRestore
         return view
     }()
     
@@ -157,11 +159,7 @@ final class WZOrdinaryAnimateContentView: WZBaseTabBarItemContentView {
         
         imageView.isHidden = true
         lottieView.isHidden = false
-        lottieView.play { [weak self] (completion) in
-            guard let self = self else { return }
-            self.imageView.isHidden = false
-            self.lottieView.isHidden = true
-        }
+        lottieView.play()
     }
     
     override func deselectAnimation(animated: Bool, completion: (() -> ())?) {
