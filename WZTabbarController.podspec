@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name              = 'WZTabbarController'
 s.version           = '1.0.4'
-s.summary           = '我主良缘自定义TabbarController'
+s.summary           = '自定义TabbarController'
 s.homepage          = 'https://github.com/WZLYiOS/WZTabbarController'
 s.license           = { :type => 'MIT', :file => 'LICENSE' }
 s.authors           = { 'LiuSky' => '327847390@qq.com'}
