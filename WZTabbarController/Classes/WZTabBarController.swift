@@ -114,21 +114,21 @@ public typealias WZTabBarControllerDidHijackHandler = ((_ tabBarController: UITa
     }
     
     // MARK: - WZTabBar delegate
-    internal func tabBar(_ tabBar: UITabBar, shouldSelect item: UITabBarItem) -> Bool {
+    public func tabBar(_ tabBar: UITabBar, shouldSelect item: UITabBarItem) -> Bool {
         if let idx = tabBar.items?.firstIndex(of: item), let vc = viewControllers?[idx] {
             return delegate?.tabBarController?(self, shouldSelect: vc) ?? true
         }
         return true
     }
     
-    internal func tabBar(_ tabBar: UITabBar, shouldHijack item: UITabBarItem) -> Bool {
+    public func tabBar(_ tabBar: UITabBar, shouldHijack item: UITabBarItem) -> Bool {
         if let idx = tabBar.items?.firstIndex(of: item), let vc = viewControllers?[idx] {
             return shouldHijackHandler?(self, vc, idx) ?? false
         }
         return false
     }
     
-    internal func tabBar(_ tabBar: UITabBar, didHijack item: UITabBarItem) {
+    public func tabBar(_ tabBar: UITabBar, didHijack item: UITabBarItem) {
         if let idx = tabBar.items?.firstIndex(of: item), let vc = viewControllers?[idx] {
             didHijackHandler?(self, vc, idx)
         }

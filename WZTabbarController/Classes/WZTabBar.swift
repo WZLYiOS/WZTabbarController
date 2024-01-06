@@ -31,7 +31,7 @@ public enum WZTabBarItemPositioning : Int {
 
 
 /// 对UITabBarDelegate进行扩展，以支持UITabBarControllerDelegate的相关方法桥接
-@objc internal protocol WZTabBarDelegate: NSObjectProtocol {
+@objc public protocol WZTabBarDelegate: NSObjectProtocol {
 
     /// 当前item是否支持选中
     ///
@@ -63,7 +63,7 @@ public enum WZTabBarItemPositioning : Int {
 /// WZTabBar是高度自定义的UITabBar子类，通过添加UIControl的方式实现自定义tabBarItem的效果。目前支持tabBar的大部分属性的设置，例如delegate,items,selectedImge,itemPositioning,itemWidth,itemSpacing等，以后会更加细致的优化tabBar原有属性的设置效果。
 @objcMembers open class WZTabBar: UITabBar {
 
-    internal weak var customDelegate: WZTabBarDelegate?
+    public weak var customDelegate: WZTabBarDelegate?
     
     /// tabBar中items布局偏移量
     public var itemEdgeInsets = UIEdgeInsets.zero
@@ -88,7 +88,7 @@ public enum WZTabBarItemPositioning : Int {
     /// tabBar自定义item的容器view
     internal var containers = [WZTabBarItemContainer]()
     /// 缓存当前tabBarController用来判断是否存在"More"Tab
-    internal weak var tabBarController: UITabBarController?
+    public weak var tabBarController: UITabBarController?
     /// 自定义'More'按钮样式，继承自WZTabBarItemContentView
     open var moreContentView: WZTabBarItemContentView? = WZTabBarItemMoreContentView.init() {
         didSet { self.reload() }
@@ -107,7 +107,7 @@ public enum WZTabBarItemPositioning : Int {
             }
         }
     }
-    
+
     open override func setItems(_ items: [UITabBarItem]?, animated: Bool) {
         super.setItems(items, animated: animated)
         self.reload()
