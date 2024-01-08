@@ -196,7 +196,7 @@ internal extension WZTabBar /* Layout */ {
         if layoutBaseSystem {
             // System itemPositioning
             // RTL反转
-            let arr = UIView.appearance().semanticContentAttribute == .forceLeftToRight ? containers:containers.reversed()
+            let arr = UIView.appearance().semanticContentAttribute == .forceRightToLeft ? containers.reversed():containers
             for (idx, container) in arr.enumerated(){
                 if !tabBarButtons[idx].frame.isEmpty {
                     container.frame = tabBarButtons[idx].frame

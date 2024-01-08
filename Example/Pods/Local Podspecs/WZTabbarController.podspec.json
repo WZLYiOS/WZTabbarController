@@ -1,7 +1,7 @@
 {
   "name": "WZTabbarController",
-  "version": "1.0.0",
-  "summary": "我主良缘自定义TabbarController",
+  "version": "1.0.5",
+  "summary": "自定义TabbarController",
   "homepage": "https://github.com/WZLYiOS/WZTabbarController",
   "license": {
     "type": "MIT",
@@ -12,22 +12,19 @@
   },
   "source": {
     "git": "https://github.com/WZLYiOS/WZTabbarController.git",
-    "tag": "1.0.0"
+    "tag": "1.0.5"
   },
   "requires_arc": true,
   "static_framework": true,
   "swift_versions": "5.0",
   "platforms": {
-    "ios": "9.0"
+    "ios": "12.0"
   },
   "default_subspecs": "Source",
   "subspecs": [
     {
       "name": "Source",
-      "source_files": "WZTabbarController/Classes/*.swift",
-      "resources": [
-        "WZTabbarController/Resources/*.{lproj}"
-      ]
+      "source_files": "WZTabbarController/Classes/*.swift"
     }
   ],
   "swift_version": "5.0"

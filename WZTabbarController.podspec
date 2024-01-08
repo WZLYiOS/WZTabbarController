@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name              = 'WZTabbarController'
-s.version           = '1.0.4'
+s.version           = '1.0.5'
 s.summary           = '自定义TabbarController'
 s.homepage          = 'https://github.com/WZLYiOS/WZTabbarController'
 s.license           = { :type => 'MIT', :file => 'LICENSE' }
@@ -11,12 +11,13 @@ s.source            = {:git => 'https://github.com/WZLYiOS/WZTabbarController.gi
 s.requires_arc = true
 s.static_framework = true
 s.swift_version         = '5.0'
-s.ios.deployment_target = '11.0'
+s.ios.deployment_target = '12.0'
 s.default_subspec = 'Source'
   
  s.subspec 'Source' do |ss|
   ss.source_files = 'WZTabbarController/Classes/*.swift'
-  ss.resources = ['WZTabbarController/Resources/*.{lproj}']
+#  ss.source_files = 'WZTabbarController/Classes/**/*'
+#  ss.resources = ['WZTabbarController/Resources/*.{lproj}']
   end
 
 

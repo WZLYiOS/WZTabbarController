@@ -1,10 +1,10 @@
 PODS:
-  - EasyRefresher (1.2.1)
-  - lottie-ios (3.1.2)
+  - EasyRefresher (1.2.2)
+  - lottie-ios (3.1.9)
   - RPCircularProgress (0.5.0)
-  - WZTabbarController (1.0.0):
-    - WZTabbarController/Source (= 1.0.0)
-  - WZTabbarController/Source (1.0.0)
+  - WZTabbarController (1.0.5):
+    - WZTabbarController/Source (= 1.0.5)
+  - WZTabbarController/Source (1.0.5)
 
 DEPENDENCIES:
   - EasyRefresher (~> 1.2.1)
@@ -23,11 +23,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyRefresher: 09f92774c41e8257828226862677692f66d5efbd
-  lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
+  EasyRefresher: 8d9eaceeb27684290444e85edd97b4f314e8ba80
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   RPCircularProgress: 4499d4a1453dfbd3fe5bd8c6f344fd51cff3ad00
-  WZTabbarController: 1fb788559d75370ec4d74fe2752b8860661a732b
+  WZTabbarController: 1bcaf2866303a9f8dde51bd5a8e4597e54ed1f76
 
-PODFILE CHECKSUM: 3d6f75b3fe23309eff0463eeea80314127d3df36
+PODFILE CHECKSUM: 07be4a2a63c86792a4066753f6ff231490d97892
 
 COCOAPODS: 1.12.1
