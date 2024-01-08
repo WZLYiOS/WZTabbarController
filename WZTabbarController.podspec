@@ -16,9 +16,8 @@ s.default_subspec = 'Source'
   
  s.subspec 'Source' do |ss|
   ss.source_files = 'WZTabbarController/Classes/*.swift'
-#  ss.source_files = 'WZTabbarController/Classes/**/*'
-#  ss.resources = ['WZTabbarController/Resources/*.{lproj}']
-  end
+  ss.resources = ['WZTabbarController/Resources/*.{lproj}']
+ end
 
 
  #s.subspec 'Binary' do |ss|
