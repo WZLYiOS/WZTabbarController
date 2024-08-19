@@ -88,7 +88,9 @@ extension UserViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(TestViewController(), animated: true)
+//        self.navigationController?.pushViewController(TestViewController(), animated: true)
+        let vc = TestPopViewController()
+        self.present(vc, animated: true)
     }
 }
 

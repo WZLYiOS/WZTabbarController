@@ -61,6 +61,10 @@ final class WZLYTabBarController: WZTabBarController {
             tabBarItem.badgeValue = nil
         }
         
+        let customItem = WZTabBarItem(WZOrdinaryAnimateContentView(resource: "Community"), title: "测试", image: #imageLiteral(resourceName: "tabbar_dynamic"), selectedImage: #imageLiteral(resourceName: "tabbar_dynamic_light"))
+        
+ 
+        
         self.viewControllers = [n1, n2, n3, n4, n5]
     }
 }

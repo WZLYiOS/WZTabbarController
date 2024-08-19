@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2815BEEF2B4D28F1007A758A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 2815BEEE2B4D28F1007A758A /* data.json */; };
+		281C52742B5A6EBF002D2B83 /* TestPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52732B5A6EBF002D2B83 /* TestPopViewController.swift */; };
 		28792E05262D30350074AB3F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28792E04262D30350074AB3F /* TestViewController.swift */; };
 		4C7A2950B5C34BA09D218D0A /* Pods_WZTabbarController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA53B9657BC5D056163F602 /* Pods_WZTabbarController_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		00C8C45CAF7E6AE03EB01026 /* Pods-WZTabbarController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Example.release.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1CB53A5B02B5E6A3C76EEEC7 /* Pods-WZTabbarController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Tests/Pods-WZTabbarController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2815BEEE2B4D28F1007A758A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		281C52732B5A6EBF002D2B83 /* TestPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPopViewController.swift; sourceTree = "<group>"; };
 		28792E04262D30350074AB3F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		38A17EB79FBC678FDB85158D /* Pods-WZTabbarController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Tests.release.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Tests/Pods-WZTabbarController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		565E0EC3448D4A080A15ACCE /* Pods-WZTabbarController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZTabbarController_Example.debug.xcconfig"; path = "Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		8058DAB32457D14C00592E72 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				2815BEEE2B4D28F1007A758A /* data.json */,
 				80621A622460F3FD006962D4 /* profile.json */,
 				8058DAB02457CFD500592E72 /* post.json */,
 				8058DAAF2457CFD500592E72 /* postDark.json */,
@@ -203,6 +208,7 @@
 				809D0B942399F43E0082813C /* WZDemoViewController.swift */,
 				80C0ADDD245BEBAB00E2455A /* HomeFooterRefresh.swift */,
 				28792E04262D30350074AB3F /* TestViewController.swift */,
+				281C52732B5A6EBF002D2B83 /* TestPopViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				BECB533B48A1765A2939BE46 /* [CP] Embed Pods Frameworks */,
+				EFDB0580CD9C51DC038F237A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8058DAB12457CFD500592E72 /* postDark.json in Resources */,
+				2815BEEF2B4D28F1007A758A /* data.json in Resources */,
 				8058DAAC2457CE7800592E72 /* radio.json in Resources */,
 				80AC75092313796600E8136E /* TabbarUser.bundle in Resources */,
 				8058DAA62457CC5900592E72 /* thumbUp.json in Resources */,
@@ -372,6 +380,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EFDB0580CD9C51DC038F237A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example-resources.sh",
+				"${PODS_ROOT}/../../WZTabbarController/Resources/en.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WZTabbarController_Example/Pods-WZTabbarController_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -379,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281C52742B5A6EBF002D2B83 /* TestPopViewController.swift in Sources */,
 				80AC75102313796600E8136E /* UserViewController.swift in Sources */,
 				80AC75082313796600E8136E /* WZTabBarController.swift in Sources */,
 				28792E05262D30350074AB3F /* TestViewController.swift in Sources */,

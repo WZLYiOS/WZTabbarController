@@ -24,7 +24,10 @@
   "subspecs": [
     {
       "name": "Source",
-      "source_files": "WZTabbarController/Classes/*.swift"
+      "source_files": "WZTabbarController/Classes/*.swift",
+      "resources": [
+        "WZTabbarController/Resources/*.{lproj}"
+      ]
     }
   ],
   "swift_version": "5.0"
