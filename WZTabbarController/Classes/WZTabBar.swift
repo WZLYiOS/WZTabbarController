@@ -140,6 +140,41 @@ public enum WZTabBarItemPositioning : Int {
         return b
     }
     
+    // 位置更新，用于自定义
+    open func uploadLoaction(layoutBaseSystem: Bool, tabBarButtons: [UIView], containers: [WZTabBarItemContainer]) {
+        if layoutBaseSystem {
+            // System itemPositioning
+            // RTL反转
+            let arr = UIView.appearance().semanticContentAttribute == .forceRightToLeft ? containers.reversed():containers
+            for (idx, container) in arr.enumerated(){
+                if !tabBarButtons[idx].frame.isEmpty {
+                    container.frame = tabBarButtons[idx].frame
+                }
+            }
+        } else {
+            // Custom itemPositioning
+            var x: CGFloat = itemEdgeInsets.left
+            var y: CGFloat = itemEdgeInsets.top
+            switch itemCustomPositioning! {
+            case .fillExcludeSeparator:
+                if y <= 0.0 {
+                    y += 1.0
+                }
+            default:
+                break
+            }
+            let width = bounds.size.width - itemEdgeInsets.left - itemEdgeInsets.right
+            let height = bounds.size.height - y - itemEdgeInsets.bottom
+            let eachWidth = itemWidth == 0.0 ? width / CGFloat(containers.count) : itemWidth
+            let eachSpacing = itemSpacing == 0.0 ? 0.0 : itemSpacing
+            /// 备注RTL 自定义未修复
+            for container in containers {
+                container.frame = CGRect.init(x: x, y: y, width: eachWidth, height: height)
+                x += eachWidth
+                x += eachSpacing
+            }
+        }
+    }
 }
 
 internal extension WZTabBar /* Layout */ {
@@ -193,38 +228,7 @@ internal extension WZTabBar /* Layout */ {
             }
         }
         
-        if layoutBaseSystem {
-            // System itemPositioning
-            // RTL反转
-            let arr = UIView.appearance().semanticContentAttribute == .forceRightToLeft ? containers.reversed():containers
-            for (idx, container) in arr.enumerated(){
-                if !tabBarButtons[idx].frame.isEmpty {
-                    container.frame = tabBarButtons[idx].frame
-                }
-            }
-        } else {
-            // Custom itemPositioning
-            var x: CGFloat = itemEdgeInsets.left
-            var y: CGFloat = itemEdgeInsets.top
-            switch itemCustomPositioning! {
-            case .fillExcludeSeparator:
-                if y <= 0.0 {
-                    y += 1.0
-                }
-            default:
-                break
-            }
-            let width = bounds.size.width - itemEdgeInsets.left - itemEdgeInsets.right
-            let height = bounds.size.height - y - itemEdgeInsets.bottom
-            let eachWidth = itemWidth == 0.0 ? width / CGFloat(containers.count) : itemWidth
-            let eachSpacing = itemSpacing == 0.0 ? 0.0 : itemSpacing
-            /// 备注RTL 自定义未修复
-            for container in containers {
-                container.frame = CGRect.init(x: x, y: y, width: eachWidth, height: height)
-                x += eachWidth
-                x += eachSpacing
-            }
-        }
+        uploadLoaction(layoutBaseSystem: layoutBaseSystem, tabBarButtons: tabBarButtons, containers: containers)
     }
 }
 

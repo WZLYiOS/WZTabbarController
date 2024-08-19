@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objcMembers internal class WZTabBarItemContainer: UIControl {
+@objcMembers public class WZTabBarItemContainer: UIControl {
     
     internal init(_ target: AnyObject?, tag: Int) {
         super.init(frame: CGRect.zero)
@@ -25,7 +25,7 @@ import UIKit
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         for subview in self.subviews {
             if let subview = subview as? WZTabBarItemContentView {
@@ -35,7 +35,7 @@ import UIKit
         }
     }
 
-    internal override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         var b = super.point(inside: point, with: event)
         if !b {
             for subview in self.subviews {
